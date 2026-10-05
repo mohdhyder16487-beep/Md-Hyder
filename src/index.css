@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 45 25% 99%;
+    --foreground: 220 20% 12%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 12%;
+    
+    --primary: 164 38% 22%;
+    --primary-foreground: 150 25% 98%;
+    
+    --muted: 160 14% 94.5%;
+    --muted-foreground: 220 10% 46%;
+    
+    --border: 160 12% 88%;
+    --input: 160 12% 88%;
+    
+    --destructive: 0 74% 52%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --ring: 164 38% 25%;
+    --radius: 0.85rem;
+  }
+}
+
+@theme {
+  --font-serif: 'Newsreader', Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-ring: hsl(var(--ring));
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-sans);
+}
+
+/* Custom markdown rendering */
+.markdown-prose {
+  line-height: 1.68;
+  word-break: break-word;
+}
+
+.markdown-prose p:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+
+.markdown-prose h1,
+.markdown-prose h2,
+.markdown-prose h3,
+.markdown-prose h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin-top: 1.15rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.markdown-prose h1 { font-size: 1.45rem; }
+.markdown-prose h2 { font-size: 1.25rem; }
+.markdown-prose h3 { font-size: 1.1rem; }
+
+.markdown-prose ul {
+  list-style-type: disc;
+  padding-left: 1.35rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.markdown-prose ol {
+  list-style-type: decimal;
+  padding-left: 1.35rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.markdown-prose li {
+  margin-bottom: 0.3rem;
+}
+
+.markdown-prose strong {
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.markdown-prose code:not(pre code) {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--primary));
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.35rem;
+  font-size: 0.875em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.markdown-prose pre {
+  background-color: #1a1e23;
+  color: #f3f4f6;
+  border-radius: 0.65rem;
+  padding: 0.85rem 1rem;
+  overflow-x: auto;
+  margin-top: 0.65rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.markdown-prose pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+.markdown-prose blockquote {
+  border-left: 3px solid hsl(var(--primary) / 0.4);
+  padding-left: 0.85rem;
+  margin: 0.75rem 0;
+  font-style: italic;
+  color: hsl(var(--muted-foreground));
+}
+
+.markdown-prose hr {
+  border: 0;
+  border-top: 1px solid hsl(var(--border));
+  margin: 1.25rem 0;
+}
+
+.markdown-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0;
+  font-size: 0.875rem;
+}
+
+.markdown-prose th,
+.markdown-prose td {
+  border: 1px solid hsl(var(--border));
+  padding: 0.4rem 0.65rem;
+  text-align: left;
+}
+
+.markdown-prose th {
+  background-color: hsl(var(--muted));
+  font-weight: 600;
+}
